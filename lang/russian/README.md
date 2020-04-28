@@ -16,7 +16,7 @@
 
 ---
 
-![Версия fullPage.js](http://img.shields.io/badge/fullPage.js-v3.0.7-brightgreen.svg)
+![Версия fullPage.js](http://img.shields.io/badge/fullPage.js-v3.0.8-brightgreen.svg)
 [![Лицензия](https://img.shields.io/badge/License-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![Перечисление на PayPal](https://img.shields.io/badge/donate-PayPal.me-ff69b4.svg)](https://www.paypal.me/alvarotrigo/9.95)
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/fullpage.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/fullpage.js)
@@ -372,7 +372,7 @@ fullpage.js [предоставляет ряд расширений](http://alva
 
 ## Опции
 
-- `licenseKey`: (по умолчанию `null`). **Эта опция является обязательной.** Если вы используете fullPage для проекта с закрытым исходным кодом, то вам следует воспользоваться лицензионным ключом, предоставляемым при приобретении коммерческой лицензии fullPage.если ваш проект открыт с открытым исходным кодом, [свяжитесь со мной](https://alvarotrigo.com/#contact), чтобы получить лицензионный ключ.. Вы можете прочесть подробнее о лицензиях [здесь](https://github.com/alvarotrigo/fullPage.js#license) и [на веб-сайте](https://alvarotrigo.com/fullPage/pricing/). Пример:
+- `licenseKey`: (по умолчанию `null`). **Эта опция является обязательной.** Если вы используете fullPage для проекта с закрытым исходным кодом, то вам следует воспользоваться лицензионным ключом, предоставляемым при приобретении коммерческой лицензии fullPage.если ваш проект открыт с открытым исходным кодом, [свяжитесь со мной](https://alvarotrigo.com/fullPage/extensions/requestKey.html), чтобы получить лицензионный ключ.. Вы можете прочесть подробнее о лицензиях [здесь](https://github.com/alvarotrigo/fullPage.js#license) и [на веб-сайте](https://alvarotrigo.com/fullPage/pricing/). Пример:
 
 ```javascript
 new fullpage({
