@@ -5,6 +5,7 @@
 <p align="center">
   <a href="https://github.com/alvarotrigo/fullPage.js">English</a> |
   <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/spanish#fullpagejs">Español</a> |
+  <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/french#fullpagejs">Français</a> |
   <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/russian#fullpagejs">Pусский</a> |
   <span>中文</span> |
   <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/korean#fullpagejs">한국어</a>
@@ -12,16 +13,17 @@
 <p align="center">
 	适用于&nbsp;<a href="https://github.com/alvarotrigo/vue-fullpage.js">Vue</a>&nbsp;,&nbsp;<a href="https://github.com/alvarotrigo/react-fullpage">React</a>&nbsp;和&nbsp;<a href="https://github.com/alvarotrigo/angular-fullpage">Angular</a>
 </p>
+
 ---
 
-![fullPage.js version](http://img.shields.io/badge/fullPage.js-v3.0.8-brightgreen.svg)
+![fullPage.js version](http://img.shields.io/badge/fullPage.js-v3.1,2-brightgreen.svg)
 [![License](https://img.shields.io/badge/License-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![PayPal Donate](https://img.shields.io/badge/donate-PayPal.me-ff69b4.svg)](https://www.paypal.me/alvarotrigo/9.95)
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/fullpage.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/fullpage.js)
 &nbsp;&nbsp; **|**&nbsp;&nbsp; *7Kb gziped* &nbsp;&nbsp;**|**&nbsp;&nbsp; *Created by [@imac2](https://twitter.com/imac2)*
 
 - [示例](http://alvarotrigo.com/fullPage/) | [Codepen](https://codepen.io/alvarotrigo/pen/NxyPPp)
-- [Wordpress plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/)
+- [Wordpress plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/) and [WordPress pluging fo Elementor](https://alvarotrigo.com/fullPage/wordpress-plugin-elementor/)
 - [Wordpress 的主题](http://alvarotrigo.com/fullPage/utils/wordpress.html)
 - [fullpage.js 扩展](http://alvarotrigo.com/fullPage/extensions/)
 - [常见问题](https://github.com/alvarotrigo/fullPage.js/wiki/FAQ---Frequently-Answered-Questions)
@@ -238,6 +240,10 @@ var myFullpage = new fullpage('#fullpage', {
 	responsiveSlides: false,
 	parallax: false,
 	parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+	dropEffect: false,
+	dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
+	waterEffect: false,
+	waterEffectOptions: { animateContent: true, animateOnMouseMove: true},
 	cards: false,
 	cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
 
@@ -433,7 +439,7 @@ new fullpage('#fullpage', {
 
 - `normalScrollElements`: （默认 `null` ）[示例](https://codepen.io/alvarotrigo/pen/RmVazM) 如果你想在滚动某些元素时避免自动滚动，这是你需要使用的选项。 （地图，滚动 div 等有用）它需要带有 Javascript 选择器的字符来表示这些元素。（例如：`normalScrollElements：'＃element1，.element2'` ）。 此选项不应该应用于任何 section/slide 元素本身。
 
-- `bigSectionsDestination`: （默认 `null` ）定义如何滚动到超出视图的 section。 默认情况下，如果此section 在目标视图的顶部，fullPage.js 将滚动到顶部，如果此 section 在目标视图的底部，则会滚动到底部。 可选的值是 `top`，`bottom`，`null`。
+- `bigSectionsDestination`: （默认 `null` ）[示例](https://codepen.io/alvarotrigo/pen/vYLdMrx) 定义如何滚动到超出视图的 section。 默认情况下，如果此section 在目标视图的顶部，fullPage.js 将滚动到顶部，如果此 section 在目标视图的底部，则会滚动到底部。 可选的值是 `top`，`bottom`，`null`。
 
 - `keyboardScrolling`: （默认为 `true` ）定义是否可以使用键盘进行内容滑动。
 
@@ -530,6 +536,15 @@ new fullpage('#fullpage', {
 - `parallax`: （默认 `false` ）[fullpage.js 的扩展](http://alvarotrigo.com/fullPage/extensions/)。 定义是否在 section/slide 上使用视差背景效果。 [详细了解如何应用视差选项](https://github.com/alvarotrigo/fullPage.js/blob/master/lang/chinese/parallax-extension.md).
 
 - `parallaxOptions`: （默认：`{type：'reveal'，percent：62，property：'translate'}`）。 允许在使用选项 parallax:true 时配置视差背景效果的参数。 [详细了解如何应用视差选项](https://github.com/alvarotrigo/fullPage.js/blob/master/lang/chinese/parallax-extension.md).
+
+
+- `dropEffect` (default `false`) [Extension of fullpage.js](http://alvarotrigo.com/fullPage/extensions/). Defines whether or not to use the drop effect on sections / slides. [Read more about how to apply the the drop effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Drop-Effect).
+
+- `dropEffectOptions`: (default: `{ speed: 2300, color: '#F82F4D', zIndex: 9999}`). Allows to configure the parameters for the drop effect when using the option `dropEffect:true`.[Read more about how to apply the the drop effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Drop-Effect).
+
+- `waterEffect` (default `false`) [Extension of fullpage.js](http://alvarotrigo.com/fullPage/extensions/). Defines whether or not to use the water effect on sections / slides. [Read more about how to apply the the water effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Water-Effect).
+
+- `waterEffectOptions`: (default: `{ animateContent: true, animateOnMouseMove: true}`). Allows to configure the parameters for the water effect when using the option `waterEffect:true`.[Read more about how to apply the the water effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Water-Effect).
 
 - `cards`: (default `false`) [Extension of fullpage.js](http://alvarotrigo.com/fullPage/extensions/) . 定义是否在 section/slide 上使用卡片效果。[了解有关如何应用卡片选项的更多信息](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Cards).
 
@@ -956,14 +971,14 @@ new fullpage('#fullpage', {
 想要构建 fullpage.js 分发文件？ 请参阅 [Build Tasks](https://github.com/alvarotrigo/fullPage.js/wiki/Build-tasks) 
 
 # 参考资源
-- [Wordpress Plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/)
+- Wordpress Plugin [for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/) and [for Elementor](https://alvarotrigo.com/fullPage/wordpress-plugin-elementor/).
 - [Wordpress theme](http://alvarotrigo.com/fullPage/utils/wordpress.html)
 - [Official Vue.js wrapper component](https://github.com/alvarotrigo/vue-fullpage.js)
 - [Official React.js wrapper component](https://github.com/alvarotrigo/react-fullpage)
 - [Official Angular wrapper component](https://github.com/alvarotrigo/angular-fullpage)
 - [CSS Easing Animation Tool - Matthew Lein](http://matthewlein.com/ceaser/) (用于定义 `easingcss3` 的值)
 - [fullPage.js jsDelivr CDN](https://www.jsdelivr.com/package/npm/fullpage.js)
-- [fullPage.js plugin for October CMS](http://octobercms.com/plugin/freestream-parallax)
+- [fullPage.js plugin for October CMS](https://github.com/freestream/oc-parallax-plugin)
 - [fullPage.js wordpress plugin](https://wordpress.org/plugins/wp-fullpage/)
 - [fullPage.js Angular2 directive](https://github.com/meiblorn/ng2-fullpage)
 - [fullPage.js angular directive](https://github.com/hellsan631/angular-fullpage.js)
@@ -976,7 +991,7 @@ new fullpage('#fullpage', {
 如果你想让你的页面在这里列出。 请使用网址 <a href="mailto:alvaro@alvarotrigo.com">与我联系</a> 。
 
 [![Google](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/google-4.png)](http://www.yourprimer.com/)
-[![Coca-cola](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/cocacola-4.png)](https://www.coca-colacompany.com/annual-review/2017/index.html)
+![Coca-cola](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/cocacola-4.png)
 ![eBay](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/ebay-4.png)
 [![BBC](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/bbc-4.png)](http://www.bbc.co.uk/news/resources/idt-d88680d1-26f2-4863-be95-83298fd01e02)
 ![Sony](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/sony-4.png)
@@ -985,47 +1000,34 @@ new fullpage('#fullpage', {
 ![British Airways](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/british-airways-5.png)
 ![McDonalds](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mcdonalds-6.png)
 ![EA](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/ea-6.png)
-[![Vogue](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/vogue-6.png)](http://www.vogue.fr/chaumet-histoires-de-liens)
+![Vogue](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/vogue-6.png)
 ![Mi](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mi-6.png)
 
-[![Mercedes](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mercedes-5.png)](https://www.x-class.com.au/)
+![Mercedes](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mercedes-5.png)
 [![sym](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/sym-5.png)](http://www.sanyang.com.tw/service/Conception/)
 ![Bugatti](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/bugatti-5.png)
-[![eDarling](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/edarling-5.png)](https://www.edarling.de/)
+![eDarling](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/edarling-5.png)
 ![Ubisoft](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/ubisoft-5.png)
 
 
-- https://www.coca-colacompany.com/annual-review/2017/index.html
 - http://www.bbc.co.uk/news/resources/idt-d88680d1-26f2-4863-be95-83298fd01e02
 - http://www.newjumoconcept.com/
 - http://www.shootinggalleryasia.com/
-- http://medoff.ua/en/
 - http://promo.prestigio.com/grace1/
-- http://www.commoditiesdemystified.info/en/
 - http://torchbrowser.com/
 - http://thekorner.fr/
-- https://www.edarling.de/
-- http://urban-walks.com/
-- http://lingualeo.com/
 - http://charlotteaimes.com/
 - http://www.boxreload.com/
 - http://educationaboveall.org/
 - http://usescribe.com/
 - http://boxx.hk/
-- http://rawmilk.dk/en/
-- http://www.famavolat.com/
 - http://www.sanyang.com.tw/service/Conception/
-- http://www.batzaya.net/
-- http://medissix.com/
 - http://trasmissione-energia.terna.it/
-- http://www.thefoodmovie.com/
 - http://www.villareginateodolinda.it
 - http://www.kesstrio.com
 - http://ded-morozz.kiev.ua/
-- http://themify.me/demo/#theme=fullpane
 - http://dancingroad.com
 - http://www.camanihome.com/
-- https://life2film.com/en/
 
 你可以在另一份列表 [这里](http://libscore.com/#$.fn.fullpage) 查找。
 

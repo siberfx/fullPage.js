@@ -5,6 +5,7 @@
 <p align="center">
   <a href="https://github.com/alvarotrigo/fullPage.js">English</a> |
   <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/spanish#fullpagejs">Español</a> |
+  <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/french#fullpagejs">Français</a> |
   <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/russian#fullpagejs">Pусский</a> |
   <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/chinese#fullpagejs">中文</a> |
   <span>한국어</span>
@@ -15,14 +16,14 @@
 </p>
 ---
 
-![fullPage.js version](http://img.shields.io/badge/fullPage.js-v3.0.8-brightgreen.svg)
+![fullPage.js version](http://img.shields.io/badge/fullPage.js-v3.1.2-brightgreen.svg)
 [![License](https://img.shields.io/badge/License-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![PayPal](https://img.shields.io/badge/donate-PayPal.me-ff69b4.svg)](https://www.paypal.me/alvarotrigo/9.95)
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/fullpage.js/badge?style=rounded)](https://www.jsdelivr.com/package/npm/fullpage.js)
 &nbsp;&nbsp; **|**&nbsp;&nbsp; *7Kb gziped* &nbsp;&nbsp;**|**&nbsp;&nbsp; *Created by [@imac2](https://twitter.com/imac2)*
 
 - [실시간 데모](http://alvarotrigo.com/fullPage/) | [Codepen](https://codepen.io/alvarotrigo/pen/NxyPPp)
-- [Wordpress plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/)
+- [Wordpress plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/) and [WordPress pluging fo Elementor](https://alvarotrigo.com/fullPage/wordpress-plugin-elementor/)
 - [워드프레스 테마](http://alvarotrigo.com/fullPage/utils/wordpress.html)
 - [fullpage.js 확장 프로그램](http://alvarotrigo.com/fullPage/extensions/)
 - [자주 묻는 질문(FAQ)](https://github.com/alvarotrigo/fullPage.js/wiki/FAQ---Frequently-Answered-Questions)
@@ -111,7 +112,7 @@ npm install fullpage.js
 Using Webpack, Browserify or Require.js? Check <a href="https://github.com/alvarotrigo/fullPage.js/wiki/Use-module-loaders-for-fullPage.js">how to use fullPage.js with module loaders</a>.
 
 ### CDN 사용 가능
-필요한 파일을 불러오실 때 CDN이 더 편하시다면 fullPage.js를 CDNJS 양식(https://cdnjs.com/libraries/fullPage.js)으로도 사용하실 수 있습니다.
+필요한 파일을 불러오실 때 CDN이 더 편하시다면 fullPage.js를 CDNJS 양식(<https://cdnjs.com/libraries/fullPage.js>)으로도 사용하실 수 있습니다.
 
 ### 필요한 HTML 구조
 HTML 코드의 첫번째 줄에 필수 [HTML DOCTYPE 표기](http://www.corelangs.com/html/introduction/doctype.html)를 넣어주세요. 넣지 않으시면 구역의 높이가 깨질 수 있습니다. 제시된 사례에서는 HTML 5 doctype `<!DOCTYPE html>`을 씁니다.
@@ -236,6 +237,10 @@ $(document).ready(function() {
 		responsiveSlides: false,
 		parallax: false,
 		parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+		dropEffect: false,
+		dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
+		waterEffect: false,
+		waterEffectOptions: { animateContent: true, animateOnMouseMove: true},
 		cards: false,
 		cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
 
@@ -423,7 +428,7 @@ new fullpage('#fullpage', {
 
 - `normalScrollElements`: (기본값 `null`) [데모](https://codepen.io/alvarotrigo/pen/RmVazM) 일부 요소 위를 스크롤할때 자동 스크롤을 피하고 싶으시다면 이 옵션을 쓰셔야 합니다. (지도, div 스크롤 등에 유용.) 이 요소에는 Javascript 선택자가 들어간 문자열이 필요합니다. (예시: `normalScrollElements: '#element1, .element2'`)
 
-- `bigSectionsDestination`: (기본값 `null`) 모바일 지원(viewport)보다 더 큰 구역으로 어떻게 스크롤하는지 정의합니다. 기본 설정시 fullPage.js는 목적지 위에 있는 구역에서 내려오는 경우 상위로 스크롤하고 목적지 아래에 있는 구역에서 올라오는 경우 하위로 스크롤합니다. `top`, `bottom`, `null` 값이 가능합니다.
+- `bigSectionsDestination`: (기본값 `null`) [데모](https://codepen.io/alvarotrigo/pen/vYLdMrx) 모바일 지원(viewport)보다 더 큰 구역으로 어떻게 스크롤하는지 정의합니다. 기본 설정시 fullPage.js는 목적지 위에 있는 구역에서 내려오는 경우 상위로 스크롤하고 목적지 아래에 있는 구역에서 올라오는 경우 하위로 스크롤합니다. `top`, `bottom`, `null` 값이 가능합니다.
 
 - `keyboardScrolling`: (기본값 `true`) 키보드를 써서 컨텐츠 사이를 이동할 수 있는지 정의합니다.
 
@@ -517,6 +522,14 @@ new fullpage('#fullpage', {
 - `parallax`: (기본값 `false`) [fullpage.js 확장 프로그램](http://alvarotrigo.com/fullPage/extensions/). 구역 / 슬라이드에서 패럴랙스 배경 효과를 쓸지 여부를 정의합니다. [패럴랙스 옵션을 어떻게 적용하는지 읽어보세요](https://github.com/alvarotrigo/fullPage.js/blob/master/lang/korean/parallax-extension.md).
 
 - `parallaxOptions`: (기본값: `{ type: 'reveal', percentage: 62, property: 'translate'}`). parallax:true 옵션을 쓰실 때 패럴랙스 배경 효과 매개변수를 설정하실 수 있습니다. [패럴랙스 옵션을 어떻게 적용하는지 읽어보세요](https://github.com/alvarotrigo/fullPage.js/blob/master/lang/korean/parallax-extension.md).
+
+- `dropEffect` (default `false`) [Extension of fullpage.js](http://alvarotrigo.com/fullPage/extensions/). Defines whether or not to use the drop effect on sections / slides. [Read more about how to apply the the drop effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Drop-Effect).
+
+- `dropEffectOptions`: (default: `{ speed: 2300, color: '#F82F4D', zIndex: 9999}`). Allows to configure the parameters for the drop effect when using the option `dropEffect:true`.[Read more about how to apply the the drop effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Drop-Effect).
+
+- `waterEffect` (default `false`) [Extension of fullpage.js](http://alvarotrigo.com/fullPage/extensions/). Defines whether or not to use the water effect on sections / slides. [Read more about how to apply the the water effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Water-Effect).
+
+- `waterEffectOptions`: (default: `{ animateContent: true, animateOnMouseMove: true}`). Allows to configure the parameters for the water effect when using the option `waterEffect:true`.[Read more about how to apply the the water effect option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Water-Effect).
 
 - `cards`: (default `false`) [Extension of fullpage.js](http://alvarotrigo.com/fullPage/extensions/). Defines whether or not to use the cards effect on sections/slides. [Read more about how to apply the cards option](https://github.com/alvarotrigo/fullPage.js/wiki/Extension-Cards).
 
@@ -943,15 +956,14 @@ new fullpage('#fullpage', {
 fullpage.js 배포 파일을 구축하고 싶으신가요? [구축 도전](https://github.com/alvarotrigo/fullPage.js/wiki/Build-tasks)을 방문해 주세요.
 
 # 재료가 되는 도구
-- [Wordpress Plugin for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/)
+- Wordpress Plugin [for Gutenberg](https://alvarotrigo.com/fullPage/wordpress-plugin-gutenberg/) and [for Elementor](https://alvarotrigo.com/fullPage/wordpress-plugin-elementor/).
 - [워드프레스 테마](https://alvarotrigo.com/fullPage/utils/wordpress.html)
 - [Official Vue.js wrapper component](https://github.com/alvarotrigo/vue-fullpage.js)
 - [Official React.js wrapper component](https://github.com/alvarotrigo/react-fullpage)
 - [Official Angular wrapper component](https://github.com/alvarotrigo/angular-fullpage)
 - [CSS Easing Animation Tool - Matthew Lein](http://matthewlein.com/ceaser/) (`easingcss3` 값을 정의하는 데 유용)
 - [fullPage.js jsDelivr CDN](https://www.jsdelivr.com/package/npm/fullpage.js)
-- [fullPage.js October CMS 플러그인](http://octobercms.com/plugin/freestream-parallax)
-- [fullPage.js 워드프레스 플러그인](https://wordpress.org/plugins/wp-fullpage/)
+- [fullPage.js October CMS 플러그인](https://github.com/freestream/oc-parallax-plugin)
 - [fullPage.js Angular2 directive](https://github.com/meiblorn/ng2-fullpage)
 - [fullPage.js angular directive](https://github.com/hellsan631/angular-fullpage.js)
 - [fullPage.js ember-cli 애드온](https://www.npmjs.com/package/ember-cli-fullpagejs)
@@ -962,8 +974,9 @@ fullpage.js 배포 파일을 구축하고 싶으신가요? [구축 도전](https
 ## 누가 fullPage.js를 쓰나요?
 귀하의 페이지가 여기에 나오길 원하시다면 저에게 URL을 <a href="mailto:alvaro@alvarotrigo.com">보내주세요</a>.
 
+
 [![Google](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/google-4.png)](http://www.yourprimer.com/)
-[![Coca-cola](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/cocacola-4.png)](https://www.coca-colacompany.com/annual-review/2017/index.html)
+![Coca-cola](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/cocacola-4.png)
 ![eBay](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/ebay-4.png)
 [![BBC](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/bbc-4.png)](http://www.bbc.co.uk/news/resources/idt-d88680d1-26f2-4863-be95-83298fd01e02)
 ![Sony](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/sony-4.png)
@@ -972,47 +985,33 @@ fullpage.js 배포 파일을 구축하고 싶으신가요? [구축 도전](https
 ![British Airways](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/british-airways-5.png)
 ![McDonalds](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mcdonalds-6.png)
 ![EA](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/ea-6.png)
-[![Vogue](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/vogue-6.png)](http://www.vogue.fr/chaumet-histoires-de-liens)
+![Vogue](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/vogue-6.png)
 ![Mi](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mi-6.png)
 
-[![Mercedes](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mercedes-5.png)](https://www.x-class.com.au/)
+![Mercedes](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mercedes-5.png)
 [![sym](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/sym-5.png)](http://www.sanyang.com.tw/service/Conception/)
 ![Bugatti](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/bugatti-5.png)
-[![eDarling](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/edarling-5.png)](https://www.edarling.de/)
+![eDarling](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/edarling-5.png)
 ![Ubisoft](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/ubisoft-5.png)
 
-
-- https://www.coca-colacompany.com/annual-review/2017/index.html
 - http://www.bbc.co.uk/news/resources/idt-d88680d1-26f2-4863-be95-83298fd01e02
 - http://www.newjumoconcept.com/
 - http://www.shootinggalleryasia.com/
-- http://medoff.ua/en/
 - http://promo.prestigio.com/grace1/
-- http://www.commoditiesdemystified.info/en/
 - http://torchbrowser.com/
 - http://thekorner.fr/
-- https://www.edarling.de/
-- http://urban-walks.com/
-- http://lingualeo.com/
 - http://charlotteaimes.com/
 - http://www.boxreload.com/
 - http://educationaboveall.org/
 - http://usescribe.com/
 - http://boxx.hk/
-- http://rawmilk.dk/en/
-- http://www.famavolat.com/
 - http://www.sanyang.com.tw/service/Conception/
-- http://www.batzaya.net/
-- http://medissix.com/
 - http://trasmissione-energia.terna.it/
-- http://www.thefoodmovie.com/
 - http://www.villareginateodolinda.it
 - http://www.kesstrio.com
 - http://ded-morozz.kiev.ua/
-- http://themify.me/demo/#theme=fullpane
 - http://dancingroad.com
 - http://www.camanihome.com/
-- https://life2film.com/en/
 
 [여기](http://libscore.com/#$.fn.fullpage)서 나머지 사용자 목록을 보실 수 있습니다.
 
